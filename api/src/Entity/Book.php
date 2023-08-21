@@ -27,8 +27,8 @@ class Book
     public string $description = '';
 
     /** The author of this book. */
-    #[ORM\Column]
-    public string $author = '';
+    #[ORM\ManyToOne(inversedBy: 'books')]
+    public ?Author $author = null;
 
     /** The publication date of this book. */
     #[ORM\Column]
